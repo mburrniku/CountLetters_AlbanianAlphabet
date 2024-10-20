@@ -12,7 +12,7 @@ class Program
         "A", "B", "C", "Ç", "D", "DH", "E", "Ë", "F", "G", "GJ", "H", "I", "J", "K", "L", "LL", "M", "N", "NJ", "O", "P", "Q", "R", "RR", "S", "SH", "T", "TH", "U", "V", "X", "XH", "Y", "Z", "ZH"
     };
 
-    // Definohet alfabeti shqiptar dhe digrafet me shkronja të mëdha (uppercase)
+    // Definohen digrafet me shkronja të mëdha (uppercase)
     static readonly List<string> digrafet = new List<string>
     {
         "DH", "GJ", "LL", "NJ", "RR", "SH", "TH", "XH", "ZH"
@@ -20,11 +20,11 @@ class Program
 
     static void Main(string[] args)
     {
-        // Merr rrugën e skedarit nga inputi i përdoruesit
+        // Merr pathin e file nga inputi i përdoruesit
         Console.Write("Sheno pathin e file: ");
         string filePath = Console.ReadLine();
 
-        // Numëro shkronjat nga skedari
+        // Numëro shkronjat nga file
         var letterCounts = NumroShkronjatNgaFile(filePath);
 
         // Nëse numërimi është kryer me sukses
@@ -51,13 +51,13 @@ class Program
         }
     }
 
-    // Funksion për të lexuar një skedar teksti dhe për të numëruar shkronjat
+    // Funksion për të lexuar një tekst nga file dhe për të numëruar shkronjat
     static Dictionary<string, int> NumroShkronjatNgaFile(string filePath)
     {
         try
         {
-            string text = File.ReadAllText(filePath); // Lexo përmbajtjen e skedarit
-            return NumroShkronjat(text); // Numëro shkronjat në tekstin e skedarit
+            string text = File.ReadAllText(filePath); // Lexo përmbajtjen e file
+            return NumroShkronjat(text); // Numëro shkronjat në tekstin e file
         }
         catch (FileNotFoundException)
         {
@@ -102,7 +102,7 @@ class Program
         foreach (char shkronja in lowerCaseText)
         {
             string letter = Char.ToUpper(shkronja).ToString(); // Shndërro shkronjën në shkronjë të madhe
-            // Kontrollo nëse letra është e pranishme në fjalor dhe numëro
+            // Kontrollo nëse shkronja është e pranishme në fjalor dhe numëro
             if (letterCount.ContainsKey(letter))
             {
                 letterCount[letter]++; // Shto numrin për shkronjën
