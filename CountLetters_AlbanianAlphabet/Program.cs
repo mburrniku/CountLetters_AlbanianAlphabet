@@ -20,6 +20,7 @@ class Program
 
     static void Main(string[] args)
     {
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
         // Merr pathin e file nga inputi i përdoruesit
         Console.Write("Sheno pathin e file: ");
         string filePath = Console.ReadLine();
