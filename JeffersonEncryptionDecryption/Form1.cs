@@ -23,10 +23,7 @@ namespace JeffersonEncryptionDecryption
         // Alfabeti i renditur sipas frekuencës
         static string[] alphabetOrder =
         {
-            "E", "Ë", "T", "I", "A", "R", "N", "U", "S", "O",
-            "K", "M", "P", "D", "J", "SH", "V", "L", "B", "H",
-            "Q", "G", "DH", "F", "Y", "NJ", "GJ", "Z", "TH", "LL",
-            "RR", "Ç", "C", "ZH", "XH", "X"
+            "E", "Ë", "A", "I", "T", "R", "N", "O", "M", "U", "K", "P", "S", "SH", "D", "J", "L", "B", "G", "V", "H", "Z", "DH", "Q", "F", "Y", "LL", "TH", "RR", "GJ", "C", "NJ", "Ç", "ZH", "XH", "X"
         };
 
         public Form1()
@@ -36,14 +33,14 @@ namespace JeffersonEncryptionDecryption
 
         private void btnDecrypt_Click(object sender, EventArgs e)
         {
-            string ciphertext = InputText.Text; // Merr tekstin e enkriptuar
+            string ciphertext = InputText.Text.ToUpper(); // Merr tekstin e enkriptuar
             string decryptedText = Decrypt(ciphertext); // Dekripto tekstin
             ResultText.Text = decryptedText; // Shfaq rezultatin e dekriptuar
         }
 
         private void btnEncrypt_Click(object sender, EventArgs e)
         {
-            string plaintext = InputText.Text; // Merr tekstin e qartë
+            string plaintext = InputText.Text.ToUpper(); // Merr tekstin e qartë
             string encryptedText = Encrypt(plaintext); // Enkriptu tekstin
             ResultText.Text = encryptedText; // Shfaq rezultatin e enkriptuar
         }
